@@ -10,7 +10,7 @@ import {Album} from 'src/app/shared/models/album';
 export class AlbumsComponent implements OnInit {
 
   public albums: Album[];
-  public columns: string[] = ['userId', 'id', 'title'];
+  public columns: string[] = ['id', 'userId', 'title'];
 
   constructor(private jsonplaceholderService: JsonplaceholderService) { }
 
