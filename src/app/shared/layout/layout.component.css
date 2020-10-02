@@ -1,0 +1,18 @@
+header {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+ul {
+  float: right;
+  list-style: none;
+  overflow: hidden;
+}
+
+ul li {
+  float: left;
+}
+
+ul li:not(:last-child) {
+  margin-right: 1rem;
+}
