@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Album} from '../models/album';
+import {Album} from 'src/app/shared/models/album';
 import {HttpClient} from '@angular/common/http';
-import {Post} from '../models/post';
-import {Todo} from '../models/todo';
+import {Post} from 'src/app/shared/models/post';
+import {Todo} from 'src/app/shared/models/todo';
 import {Observable} from 'rxjs';
 
 @Injectable({

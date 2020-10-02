@@ -7,6 +7,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {LayoutModule} from './shared/layout/layout.module';
+import {SharedModule} from './shared/shared.module';
+import {MaterialModule} from './shared/material.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,12 @@ import {LayoutModule} from './shared/layout/layout.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     MatButtonModule,
     LayoutModule,
     RouterModule,
+    SharedModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
