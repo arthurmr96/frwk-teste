@@ -14,7 +14,9 @@ export class LayoutComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit(): void {
-    this.isMobile = this.breakpointObserver.isMatched('(max-width: 419.9px)');
+    this.breakpointObserver.observe(['(max-width: 419.9px)']).subscribe(state => {
+      this.isMobile = state.matches;
+    });
   }
 
   isActive(url: string): boolean {
