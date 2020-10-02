@@ -6,10 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
-import {LayoutModule} from './shared/layout/layout.module';
 import {SharedModule} from './shared/shared.module';
 import {MaterialModule} from './shared/material.module';
 import {HttpClientModule} from '@angular/common/http';
+import {ComponentsModule} from './shared/components/component.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    ComponentsModule,
     MatButtonModule,
-    LayoutModule,
     RouterModule,
     SharedModule,
     MaterialModule
