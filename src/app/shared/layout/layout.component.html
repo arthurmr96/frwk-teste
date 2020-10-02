@@ -1,11 +1,17 @@
 <header>
   <nav>
-    <h3>Framework</h3>
-    <ul>
-      <li [routerLink]="'/albums'">Albums</li>
-      <li [routerLink]="'/posts'">Posts</li>
-      <li [routerLink]="'/todos'">To-dos</li>
+    <h2 id="title">Framework</h2>
+    <button class="menu-items" *ngIf="isMobile" [matMenuTriggerFor]="menu" mat-icon-button><mat-icon>menu</mat-icon></button>
+    <ul class="menu-items" *ngIf="!isMobile">
+      <li><a [ngClass]="{'active': isActive('albums')}" [routerLink]="'/albums'">Albums</a></li>
+      <li><a [ngClass]="{'active': isActive('posts')}" [routerLink]="'/posts'">Posts</a></li>
+      <li><a [ngClass]="{'active': isActive('todos')}" [routerLink]="'/todos'">To-Dos</a></li>
     </ul>
+    <mat-menu #menu>
+      <button mat-menu-item [routerLink]="'/albums'"><span [ngClass]="{'active': isActive('albums')}">Albums</span></button>
+      <button mat-menu-item [routerLink]="'/posts'"><span [ngClass]="{'active': isActive('posts')}">Posts</span></button>
+      <button mat-menu-item [routerLink]="'/todos'"><span [ngClass]="{'active': isActive('todos')}">To-Dos</span></button>
+    </mat-menu>
   </nav>
 </header>
 <main>

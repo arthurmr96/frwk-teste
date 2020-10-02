@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppModule} from './app.module';
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./app.module').then(m => AppModule) },
+  { path: '', redirectTo: '/albums', pathMatch: 'full' },
   { path: 'albums', loadChildren: () => import('./albums/albums.module').then(m => m.AlbumsModule) },
   { path: 'posts', loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule) },
-  { path: 'todos', loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule) }
-  ];
+  { path: 'todos', loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule) },
+  { path: '**', loadChildren: () => import('./albums/albums.module').then(m => m.AlbumsModule) }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

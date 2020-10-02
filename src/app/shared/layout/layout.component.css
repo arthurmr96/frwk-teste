@@ -1,9 +1,39 @@
 header {
-  background-color: cornflowerblue;
+  background-color: #7900DF;
   color: white;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0 1rem;
+}
+
+#title {
+  margin-right: auto;
+}
+
+.menu-items {
+  margin-left: auto;
+}
+
+button > .active {
+  color: #7900DF !important;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: xx-large;
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   float: right;
   list-style: none;
   overflow: hidden;
@@ -11,8 +41,18 @@ ul {
 
 ul li {
   float: left;
+  font-size: large;
 }
 
-ul li:not(:last-child) {
-  margin-right: 1rem;
+li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.active {
+  color: white !important;
+}
+
+ul li:not(:first-child) {
+  margin-left: 1rem;
 }

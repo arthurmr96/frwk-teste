@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  public isMobile: boolean = false;
+
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit(): void {
+    this.isMobile = this.breakpointObserver.isMatched('(max-width: 419.9px)');
   }
 
+  isActive(url: string): boolean {
+    if (!this.router.url.includes(url)) {
+      return false;
+    }
+
+    return true;
+  }
 }
