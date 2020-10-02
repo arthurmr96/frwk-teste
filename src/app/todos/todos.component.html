@@ -1,1 +1,32 @@
-<p>todos works!</p>
+<table mat-table [dataSource]="todos" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef class="label">
+      <div class="label">#</div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef>
+      <div class="label">User ID</div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef class="label">
+      <div class="label">Title</div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="completed">
+    <th mat-header-cell *matHeaderCellDef class="label">
+      <div class="label">Completed?</div>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.completed ? 'Yes' : 'No' }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row *matRowDef="let row; columns: columns"></tr>
+</table>
